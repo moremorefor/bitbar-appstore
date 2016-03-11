@@ -4,10 +4,12 @@ BitBar plugin to show info about your iOS app.
 ## Ranking
 Shows your iOS app ranking.
 
-![screenshot](https://cloud.githubusercontent.com/assets/966109/13680763/6354f3c0-e73d-11e5-8c57-eb90bd5a53af.png)
+![screenshot](https://cloud.githubusercontent.com/assets/966109/13702201/2df45fca-e7d0-11e5-90b3-3f6fb880afec.png)
 
 ### Setup
 ```python
+show_country = True
+
 feed_settings = [
   {
   'RANKING_TYPE': RANKING_TYPE['Top Free Applications'], # See list in file

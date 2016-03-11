@@ -69,6 +69,8 @@ GENRE = {
 
 
 # Feed Setting ===============================================================
+show_country = True
+
 feed_settings = [
     {
         'RANKING_TYPE': RANKING_TYPE['Top Free Applications'], # See list above
@@ -92,6 +94,7 @@ feed_settings = [
         'APP_ID'      : 0000000000
     }
 ]
+
 # ============================================================================
 
 for i in xrange(len(feed_settings)):
@@ -115,7 +118,9 @@ for i in xrange(len(feed_settings)):
     for entry in data['feed']['entry']:
         count += 1
         if entry['id']['attributes']['im:id'] == str(feed['APP_ID']):
-            print "[" + feed['RANKING_TYPE']['label'] + '] ' + feed['GENRE']['label'] + ": " + str(count)
+            country = feed['COUNTRY'].upper() + ":" if show_country else ""
+            print "[" + country + "" + feed['RANKING_TYPE']['label'] + '] ' + feed['GENRE']['label'] + ": " + str(count)
             find_ranking = True
         elif count == feed['LIMIT'] and find_ranking == False:
-            print "[" + feed['RANKING_TYPE']['label'] + '] ' + feed['GENRE']['label'] + ": ---"
+            country = feed['COUNTRY'].upper() + ":" if show_country else ""
+            print "[" + country + "" + feed['RANKING_TYPE']['label'] + '] ' + feed['GENRE']['label'] + ": ---"
